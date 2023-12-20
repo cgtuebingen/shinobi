@@ -31,6 +31,7 @@ export interface LinkNode {
 export interface InstitutionNode {
 	name: string
 	link: string
+	image?: string
 }
 
 export interface FigureNode {
