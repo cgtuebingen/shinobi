@@ -21,7 +21,7 @@ const Chapter: FunctionComponent<ChapterProps> = ({
 
 	return (
 		<>
-			<div className="space-y-3 pt-16">
+			<div className="space-y-3 pt-16" id={name}>
 				{!hideHeading && <h1 className="text-primary font-sans text-xl font-bold">{name}</h1>}
 				<p className="text-justify block  font-normal "></p>{" "}
 				{/* FIXME: Bad practice just for spacing for now */}

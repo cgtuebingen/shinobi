@@ -18,15 +18,18 @@ const StickyHeader: React.FC<StickyHeaderProps> = ({ title, links }) => {
 					<p className="text-justify block  font-bold  text-lg">{title}</p>
 					<div className="flex flex-row space-x-4 justify-center items-center">
 						{links &&
-							links.map((link) => (
-								<a
-									key={link.name}
-									href={link.link}
-									className="text-secondary font-normal  cursor-pointer text-inherit  text-center hover:underline"
-								>
-									{link.name}
-								</a>
-							))}
+							links.map(
+								(link, index) =>
+									(link.icon == "arxiv" || link.icon == "bibtex" || link.icon == "youtube") && (
+										<a
+											key={link.name}
+											href={link.link}
+											className="text-secondary font-normal  cursor-pointer text-inherit  text-center hover:underline"
+										>
+											{link.name}
+										</a>
+									),
+							)}
 					</div>
 				</div>
 			</div>

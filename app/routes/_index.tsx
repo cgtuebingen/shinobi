@@ -16,6 +16,7 @@ import type {
 	FigureNode,
 	InstitutionNode,
 	LinkNode,
+	ReferencesNode,
 	TitleNode,
 } from "@/types/node"
 import { json, type LoaderFunction, type LoaderFunctionArgs } from "@remix-run/node"
@@ -24,6 +25,7 @@ import { readFile } from "fs/promises"
 import { join } from "path"
 import { useState } from "react"
 import Chapter from "@/components/chapter/chapter"
+import References from "@/components/references/references"
 
 export const loader: LoaderFunction = async (args: LoaderFunctionArgs) => {
 	// Header
@@ -40,6 +42,7 @@ export const loader: LoaderFunction = async (args: LoaderFunctionArgs) => {
 	const bibliography = JSON.parse(await readFile(join(process.cwd(), `/content/bibliography.json`), "utf8"))
 	const citation = JSON.parse(await readFile(join(process.cwd(), `/content/citation.json`), "utf8"))
 	const acknowledgements = JSON.parse(await readFile(join(process.cwd(), `/content/acknowledgements.json`), "utf8"))
+	const references = JSON.parse(await readFile(join(process.cwd(), `/content/references.json`), "utf8"))
 
 	const data = {
 		title: title,
@@ -51,6 +54,7 @@ export const loader: LoaderFunction = async (args: LoaderFunctionArgs) => {
 		bibliography: bibliography,
 		citation: citation,
 		acknowledgements: acknowledgements,
+		references: references,
 	}
 	return json(data)
 }
@@ -64,6 +68,7 @@ const App = () => {
 	const { figures } = useLoaderData() as { figures: Record<string, FigureNode> }
 	const { citation } = useLoaderData() as { citation: CitationNode }
 	const { acknowledgements } = useLoaderData() as { acknowledgements: AcknowledgementsNode }
+	const { references } = useLoaderData() as { references: ReferencesNode }
 
 	const [showStickyHeader, setShowStickyHeader] = useState(false)
 
@@ -96,10 +101,11 @@ const App = () => {
 					{document.chapters.map((chapter: ChapterNode, index: number) => (
 						<Chapter {...chapter} key={index} figures={figures} />
 					))}
-					<Relighter sceneName="dino_5" />
+					<Relighter />
 
 					<Citation {...citation} />
 					<Acknowledgements {...acknowledgements} />
+					<References {...references} />
 				</div>
 			</div>
 		</>

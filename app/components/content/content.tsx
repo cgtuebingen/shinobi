@@ -39,12 +39,12 @@ const Content: FunctionComponent<ContentProps> = ({ name, contents, children, fi
 					if (figures && figures[content.id]) {
 						// TODO: This should be fiexed in the future
 						return (
-							<>
+							<div key={name + "_figure_" + index}>
 								{isInParagraph && index === 0 && (
 									<strong key={"hedaing_figure_" + index}>{name}</strong>
 								)}
 								<Figure key={name + "_figure_" + index} {...figures[content.id]} isInsideTextBlock />
-							</>
+							</div>
 						)
 					}
 				} else {

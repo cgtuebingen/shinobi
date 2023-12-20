@@ -48,7 +48,7 @@ const Relighter: FunctionComponent<RelighterProps> = ({ styling, children }) => 
 			"camera1",
 			Math.PI * 0.5,
 			Math.PI / 2.5,
-			1.0,
+			1.5,
 			BABYLON.Vector3.Zero(),
 			scene,
 		)

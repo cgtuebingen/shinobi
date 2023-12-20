@@ -23,7 +23,7 @@ const Citation: FunctionComponent<CitationProps> = ({ type, name, authors, title
 	}
 
 	return (
-		<div className="space-y-3 pt-16">
+		<div className="space-y-3 pt-16" id="Citation">
 			<h1 className="text-primary font-sans text-xl font-bold">Citation</h1>
 
 			<div className="group relative rounded-lg bg-black bg-opacity-5 hover:bg-opacity-10 transition duration-200 ease-in-out p-2">

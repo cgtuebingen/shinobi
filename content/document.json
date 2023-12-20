@@ -183,10 +183,6 @@
                     "name": "Comparison to SAMURAI",
                     "contents": [
                         {
-                            "type": "figure",
-                            "id": "decomposition"
-                        },
-                        {
                             "type": "text",
                             "content": [
                                 {
@@ -212,6 +208,10 @@
                                     "content": "."
                                 }
                             ]
+                        },
+                        {
+                            "type": "figure",
+                            "id": "decomposition"
                         }
                     ]
                 },
