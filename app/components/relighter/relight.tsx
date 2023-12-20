@@ -21,7 +21,7 @@ const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }
 		var urlParams = new URLSearchParams(window.location.search)
 		var sceneName = urlParams.get("scene")
 		if (sceneName === null) {
-			sceneName = "tractorgreen"
+			sceneName = "tractor"
 		}
 		var auto_rotate = urlParams.get("rotate")
 		if (auto_rotate === null) {
@@ -46,6 +46,8 @@ const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }
 		)
 		camera.panningSensibility = 0
 		camera.lowerRadiusLimitSearch = 0.015
+		camera.minZ = 0.3
+		//camera.wheelDeltaPercentage = 0.01
 		if (!should_rotate) {
 			camera.attachControl(canvas, true)
 		} else {
@@ -192,8 +194,23 @@ const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }
 	}, [])
 
 	return (
-		<div className="relative w-full bg-slate-200" style={{ height: "400px" }}>
-			<canvas id="renderCanvas" touch-action="none"></canvas>
+		<div
+			className="relative w-full bg-slate-200"
+			style={{ height: "400px" }}
+			onWheel={(e) => {
+				e.preventDefault()
+				e.stopPropagation()
+			}}
+		>
+			<canvas
+				id="renderCanvas"
+				touch-action="none"
+				className="absolute top-0 left-0 w-full h-full"
+				onWheel={(e) => {
+					e.preventDefault()
+					e.stopPropagation()
+				}}
+			></canvas>
 		</div>
 	)
 }

@@ -37,9 +37,9 @@ export default function App() {
 				<Links />
 				<title>{title.title}</title>
 
-				<script src="../babylon/babylon.js"></script>
-				<script src="../babylon/babylonjs.loaders.min.js"></script>
-				<script src="../babylon/babylon.gui.min.js"></script>
+				<script src="/babylon/babylon.js"></script>
+				<script src="/babylon/babylonjs.loaders.min.js"></script>
+				<script src="/babylon/babylon.gui.min.js"></script>
 				<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 			</head>
 			<body style={{ overscrollBehavior: "none" }}>
