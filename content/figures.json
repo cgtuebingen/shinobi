@@ -5,6 +5,10 @@
         "urls": [
             "/videos/shinobi_teaser.mp4"
         ],
+        "styling": {
+            "roundedCorners": false,
+            "objectFit": "contain"
+        },
         "captions": [
             {
                 "type": "paragraph",
@@ -29,7 +33,8 @@
         ],
         "styling": {
             "roundedCorners": false,
-            "showControls": true
+            "showControls": true,
+            "objectFit": "contain"
         },
         "captions": [
             {
@@ -55,7 +60,8 @@
         ],
         "styling": {
             "roundedCorners": false,
-            "showControls": false
+            "showControls": false,
+            "objectFit": "contain"
         },
         "captions": [
             {

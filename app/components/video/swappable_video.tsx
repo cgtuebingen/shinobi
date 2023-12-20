@@ -21,6 +21,7 @@ const SwappableVideo: FunctionComponent<SwappableVideoProps> = ({
 	children,
 }) => {
 	const roundedCorners = styling == undefined ? true : styling.roundedCorners
+	const objectFit = styling == undefined ? "cover" : styling.objectFit
 
 	const [selectedVideoIndex, setSelectedVideoIndex] = useState(0)
 	const [isAutoSwapping, setIsAutoSwapping] = useState(autoSwap)
@@ -143,7 +144,7 @@ const SwappableVideo: FunctionComponent<SwappableVideoProps> = ({
 	}, [selectedVideoIndex]) // Rerun this effect when the selected video changes
 
 	return (
-		<div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+		<div className="relative w-full" style={{ paddingTop: objectFit == "cover" ? "56.25%" : 0 }}>
 			{urls.map((url, index) => (
 				<video
 					key={index}
@@ -157,9 +158,9 @@ const SwappableVideo: FunctionComponent<SwappableVideoProps> = ({
 					loop
 					playsInline
 					muted
-					className="absolute top-0 left-0 w-full h-full"
+					className={objectFit == "cover" ? "absolute top-0 left-0 w-full h-full" : ""}
 					style={{
-						objectFit: "cover",
+						objectFit: objectFit,
 						transition: index === selectedVideoIndex ? "none" : "opacity 500ms ease-in-out",
 						opacity: index === selectedVideoIndex ? 1 : 0,
 						zIndex: index === selectedVideoIndex ? 0 : 1,
@@ -181,7 +182,7 @@ const SwappableVideo: FunctionComponent<SwappableVideoProps> = ({
 						muted
 						className="w-16 h-16 cursor-pointer shadow-lg border-2"
 						style={{
-							objectFit: "cover",
+							objectFit: objectFit,
 							filter: index === selectedVideoIndex ? "grayscale(100%)" : "none",
 							borderColor: index === selectedVideoIndex ? "#fff" : "rgba(255, 255, 255, 0.5)",
 							zIndex: 2,

@@ -189,7 +189,7 @@ const ComparableSwappableVideo: React.FC<ComparableSwappableVideoProps> = ({
 					loop
 					playsInline
 					muted
-					className="absolute top-0 left-0 w-full h-full"
+					className={objectFit == "cover" ? "absolute top-0 left-0 w-full h-full" : ""}
 					style={{
 						objectFit: "cover",
 						zIndex: 0,

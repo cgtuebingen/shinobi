@@ -8,11 +8,21 @@ interface ChapterProps extends ChapterNode {
 	figures?: Record<string, FigureNode>
 }
 
-const Chapter: FunctionComponent<ChapterProps> = ({ name, introduction, sections, paragraphs, figures, children }) => {
+const Chapter: FunctionComponent<ChapterProps> = ({
+	name,
+	introduction,
+	sections,
+	paragraphs,
+	figures,
+	styling,
+	children,
+}) => {
+	const hideHeading = styling == undefined ? false : styling.hideHeading
+
 	return (
 		<>
 			<div className="space-y-3 pt-16">
-				<h1 className="text-primary font-sans text-xl font-bold">{name}</h1>
+				{!hideHeading && <h1 className="text-primary font-sans text-xl font-bold">{name}</h1>}
 				<p className="text-justify block  font-normal "></p>{" "}
 				{/* FIXME: Bad practice just for spacing for now */}
 				<Content name={name} contents={introduction} figures={figures} />

@@ -11,9 +11,10 @@ const Video: FunctionComponent<VideoProps> = ({ url, styling, children }) => {
 	const roundedCorners = styling == undefined ? true : styling.roundedCorners
 	const scaleContent = styling == undefined ? 1.0 : styling.scaleContent
 	const showControls = styling == undefined ? false : styling.showControls
+	const objectFit = styling == undefined ? "cover" : styling.objectFit
 
 	return (
-		<div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+		<div className="relative w-full" style={{ paddingTop: objectFit == "cover" ? "56.25%" : 0 }}>
 			<video
 				autoPlay
 				loop
@@ -21,9 +22,9 @@ const Video: FunctionComponent<VideoProps> = ({ url, styling, children }) => {
 				//@ts-ignore
 				playsInline
 				muted
-				className="absolute top-0 left-0 w-full h-full"
+				className={objectFit == "cover" ? "absolute top-0 left-0 w-full h-full" : ""}
 				style={{
-					objectFit: "cover",
+					objectFit: objectFit,
 					borderRadius: roundedCorners ? "0.5rem" : "0",
 					transform: `scale(${scaleContent})`,
 				}}

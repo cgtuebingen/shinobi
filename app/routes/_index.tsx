@@ -86,7 +86,7 @@ const App = () => {
 						<Links links={links} />
 					</Header>
 
-					<div className="pt-2">{figures["overview"] && <Figure {...figures["overview"]} />}</div>
+					{/* <div className="pt-2">{figures["overview"] && <Figure {...figures["overview"]} />}</div> */}
 
 					{/* {figures["object_editing_bear"] && (
 								<ComparableSwappableVideo {...figures["object_editing_bear"]} />

@@ -52,7 +52,6 @@ const ComparableVideo: React.FC<ComparableVideoProps> = ({ videoSrc1, videoSrc2 
 
 	// Event listener for mouse movement to update the divider position
 	const handleMouseMove = (event: React.MouseEvent) => {
-		// Get mouse position relative to the canvas
 		const rect = canvasRef.current?.getBoundingClientRect()
 		const x = event.clientX - rect!.left
 		const y = event.clientY - rect!.top
@@ -63,7 +62,6 @@ const ComparableVideo: React.FC<ComparableVideoProps> = ({ videoSrc1, videoSrc2 
 		// Update the divider position
 		dividerPositionRef.current = normalizedX
 	}
-
 	return (
 		<div className="relative w-full" style={{ paddingTop: "56.25%" }} onPointerMove={handleMouseMove}>
 			<canvas

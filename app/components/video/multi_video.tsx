@@ -10,6 +10,7 @@ interface VideoProps {
 const MultiVideo: FunctionComponent<VideoProps> = ({ urls, styling, children }) => {
 	const roundedCorners = styling == undefined ? true : styling.roundedCorners
 	const scaleContent = styling == undefined ? 1.0 : styling.scaleContent
+	const objectFit = styling == undefined ? "cover" : styling.objectFit
 
 	const videosRefs = useRef<HTMLVideoElement[]>([])
 	const videoCurrentTime = useRef<number>(0)
@@ -59,7 +60,7 @@ const MultiVideo: FunctionComponent<VideoProps> = ({ urls, styling, children }) 
 						muted
 						className="w-full h-full"
 						style={{
-							objectFit: "cover",
+							objectFit: objectFit,
 							borderRadius: roundedCorners ? "0.5rem" : "0",
 						}}
 					>

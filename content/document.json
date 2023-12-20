@@ -2,6 +2,9 @@
     "chapters": [
         {
             "name": "Abstract",
+            "styling": {
+                "hideHeading": true
+            },
             "introduction": [
                 {
                     "type": "figure",

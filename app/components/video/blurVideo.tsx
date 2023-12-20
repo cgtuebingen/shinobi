@@ -11,6 +11,7 @@ const BlurVideo: FunctionComponent<BlurVideoProps> = ({ url, styling, children }
 	const roundedCorners = styling == undefined ? true : styling.roundedCorners
 	const scaleContent = styling == undefined ? 1.0 : styling.scaleContent
 	const showControls = styling == undefined ? false : styling.showControls
+	const objectFit = styling == undefined ? "cover" : styling.objectFit
 
 	const videosRefs = useRef<HTMLVideoElement[]>([])
 	const videoCurrentTime = useRef<number>(0)
@@ -43,7 +44,7 @@ const BlurVideo: FunctionComponent<BlurVideoProps> = ({ url, styling, children }
 	})
 
 	return (
-		<div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+		<div className="relative w-full" style={{ paddingTop: objectFit == "cover" ? "56.25%" : 0 }}>
 			<video
 				autoPlay
 				loop
@@ -52,10 +53,10 @@ const BlurVideo: FunctionComponent<BlurVideoProps> = ({ url, styling, children }
 				playsInline
 				muted
 				ref={(el) => (el ? (videosRefs.current[0] = el) : null)}
-				className="absolute top-0 left-0 w-full h-full"
+				className={objectFit == "cover" ? "absolute top-0 left-0 w-full h-full" : ""}
 				style={{
 					zIndex: 1,
-					objectFit: "cover",
+					objectFit: objectFit,
 					borderRadius: roundedCorners ? "0.5rem" : "0",
 					transform: `scale(${scaleContent})`,
 				}}
@@ -69,7 +70,7 @@ const BlurVideo: FunctionComponent<BlurVideoProps> = ({ url, styling, children }
 				playsInline
 				muted
 				ref={(el) => (el ? (videosRefs.current[1] = el) : null)}
-				className="absolute top-0 left-0 w-full h-full"
+				className={objectFit == "cover" ? "absolute top-0 left-0 w-full h-full" : ""}
 				style={{
 					zIndex: 0,
 					objectFit: "cover",

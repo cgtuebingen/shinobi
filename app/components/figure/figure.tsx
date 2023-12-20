@@ -6,6 +6,7 @@ import SwapableVideo from "../video/swappable_video"
 import SwappableVideo from "../video/swappable_video"
 import MultiVideo from "../video/multi_video"
 import BlurVideo from "../video/blurVideo"
+import Youtube from "../youtube/youtube"
 
 interface FigureProps extends FigureNode {
 	children?: React.ReactNode
@@ -30,7 +31,7 @@ const Figure: FunctionComponent<FigureProps> = ({
 			style={{ paddingTop: isInsideTextBlock ? "1rem" : "0px", filter: isTODO ? "blur(30px)" : "none" }}
 		>
 			{type === "video" && <Video url={urls[0]} styling={styling} />}
-			{type === "youtube" && <Video url={urls[0]} styling={styling} />}
+			{type === "youtube" && <Youtube url={urls[0]} styling={styling} />}
 			{type === "multi_video" && <MultiVideo urls={urls} styling={styling} />}
 			{type === "blur_video" && <BlurVideo url={urls[0]} styling={styling} />}
 			{type === "swappable_video" && (

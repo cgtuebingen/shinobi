@@ -12,8 +12,6 @@ export interface AcknowledgementsNode {
 	content: [TextNode | ListNode]
 }
 
-
-
 export interface AuthorNode {
 	name: string
 	link: string
@@ -48,6 +46,7 @@ export interface FigureStylingNode {
 	roundedCorners?: boolean
 	scaleContent?: number
 	showControls?: boolean
+	objectFit?: "cover" | "contain"
 }
 
 export interface DocumentNode {
@@ -56,11 +55,15 @@ export interface DocumentNode {
 
 export interface ChapterNode {
 	name: string
-	introduction: [TextNode  | FigureReferenceNode | ListNode]
+	introduction: [TextNode | FigureReferenceNode | ListNode]
 	sections: [SectionNode]
 	paragraphs: [ParagraphNode]
+	styling?: ChapterStylingNode
 }
 
+export interface ChapterStylingNode {
+	hideHeading?: boolean
+}
 export interface SectionNode {
 	name: string
 	introduction: [SubSectionNode | ParagraphNode]
@@ -68,13 +71,13 @@ export interface SectionNode {
 
 export interface SubSectionNode {
 	name: string
-	introduction: [ TextNode | ParagraphNode  | FigureReferenceNode | ListNode]
+	introduction: [TextNode | ParagraphNode | FigureReferenceNode | ListNode]
 }
 
 export interface ParagraphNode {
 	type: "paragraph"
 	name: string
-	contents: [TextNode  | FigureReferenceNode | ListNode]
+	contents: [TextNode | FigureReferenceNode | ListNode]
 }
 
 export interface TextNode {
@@ -88,7 +91,6 @@ export interface ListNode {
 	isOrdered?: boolean
 }
 
-
 export interface TextPlainNode {
 	type: "plain_text"
 	content: string
@@ -100,8 +102,6 @@ export interface TextLinkNode {
 	link: string
 	icon?: string
 }
-
-
 
 export interface FigureReferenceNode {
 	type: "figure"
