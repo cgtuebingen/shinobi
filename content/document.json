@@ -203,16 +203,16 @@
                                     "content": " high-frequency details are better preserved while optimization time is reduced to roughly a third. Figure 2 shows an example object from the"
                                 },
                                 {
-                                   "type": "link_text",
-                                   "content": "NAVI dataset [1]",
-                                   "link": "https://navidataset.github.io/"
-                               },
-                               {
-                                   "type": "plain_text",
-                                   "content": "."
-                               }
+                                    "type": "link_text",
+                                    "content": "NAVI dataset [1]",
+                                    "link": "https://navidataset.github.io/"
+                                },
+                                {
+                                    "type": "plain_text",
+                                    "content": "."
+                                }
                             ]
-                        },
+                        }
                     ]
                 },
                 {
@@ -236,46 +236,6 @@
                                     "content": ". Click on an image for an interactive 3D visualization."
                                 }
                             ]
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "tractor"
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "remotecar"
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "keywest"
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "lion"
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "baldeagle"
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "fireengine"
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "pumpkin"
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "dino_5"
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "hutmushroom"
-                        },
-                        {
-                            "type": "3drelight",
-                            "id": "colored_box"
                         }
                     ]
                 }

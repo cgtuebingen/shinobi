@@ -96,7 +96,7 @@ const App = () => {
 					{document.chapters.map((chapter: ChapterNode, index: number) => (
 						<Chapter {...chapter} key={index} figures={figures} />
 					))}
-					<Relighter sceneName="dino_5" />
+					<Relighter url="models/baldeagle.jpg" />
 
 					<Citation {...citation} />
 					<Acknowledgements {...acknowledgements} />
