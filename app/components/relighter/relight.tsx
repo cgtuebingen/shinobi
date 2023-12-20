@@ -29,8 +29,8 @@ const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }
 		}
 		var should_rotate = parseInt(auto_rotate)
 
-		const baseModelFolder = "/models/"
-		const baseHdriFolder = "/hdris/"
+		const baseModelFolder = "models/"
+		const baseHdriFolder = "hdris/"
 
 		const canvas = document.getElementById("renderCanvas") // Get the canvas element
 		const engine = new BABYLON.Engine(canvas, true) // Generate the BABYLON 3D engine

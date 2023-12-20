@@ -13,7 +13,7 @@ const Link: FunctionComponent<LinkProps> = ({ link, name, icon, children }) => {
 				window.open(link, "_blank")
 			}}
 		>
-			<img src={"/icons/" + icon + ".svg"} />
+			<img src={"icons/" + icon + ".svg"} />
 			<span className="text-m  text-white">{name}</span>
 		</button>
 	)
