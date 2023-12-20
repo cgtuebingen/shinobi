@@ -38,7 +38,7 @@
                         "content": "SHINOBI Pipeline Overview"
                     }
                 ]
-            },
+            }
         ]
     },
     "decomposition": {
@@ -61,14 +61,14 @@
                         "content": "Material decomposition compared to SAMURAI [2] on 'bald eagle' scene [1]."
                     }
                 ]
-            },
+            }
         ]
     },
     "shinobi_scene_relighting": {
         "name": "Application Relighting",
         "type": "video",
         "urls": [
-            "/videos/shinobi_integrated_scene_relighting_v05_compressed.mp4",
+            "/videos/shinobi_integrated_scene_relighting_v05_compressed.mp4"
         ]
     },
     "shinobi_scene_material_editing": {
@@ -76,8 +76,8 @@
         "type": "swappable_video",
         "urls": [
             "/videos/shinobi_material_editing0_v05_compressed.mp4",
-            "/videos/shinobi_material_editing1_v05_compressed.mp4",
-        ],
-    },
+            "/videos/shinobi_material_editing1_v05_compressed.mp4"
+        ]
+    }
     
 }
