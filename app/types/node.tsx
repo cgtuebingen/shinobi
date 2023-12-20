@@ -9,8 +9,10 @@ export interface CitationNode {
 
 export interface AcknowledgementsNode {
 	name: string
-	content: [TextNode | CiteNode]
+	content: [TextNode | ListNode]
 }
+
+
 
 export interface AuthorNode {
 	name: string
@@ -36,7 +38,7 @@ export interface InstitutionNode {
 
 export interface FigureNode {
 	name: string
-	type: "image" | "video" | "swappable_video" | "multi_video" | "blur_video"
+	type: "image" | "video" | "swappable_video" | "multi_video" | "blur_video" | "youtube"
 	urls: string[]
 	captions?: ParagraphNode[]
 	styling?: FigureStylingNode
@@ -54,7 +56,7 @@ export interface DocumentNode {
 
 export interface ChapterNode {
 	name: string
-	introduction: [TextNode | CiteNode | FigureReferenceNode]
+	introduction: [TextNode  | FigureReferenceNode | ListNode]
 	sections: [SectionNode]
 	paragraphs: [ParagraphNode]
 }
@@ -66,19 +68,26 @@ export interface SectionNode {
 
 export interface SubSectionNode {
 	name: string
-	introduction: [CiteNode | TextNode | ParagraphNode | LineBreakNode | FigureReferenceNode]
+	introduction: [ TextNode | ParagraphNode  | FigureReferenceNode | ListNode]
 }
 
 export interface ParagraphNode {
 	type: "paragraph"
 	name: string
-	contents: [TextNode | CiteNode | LineBreakNode | FigureReferenceNode]
+	contents: [TextNode  | FigureReferenceNode | ListNode]
 }
 
 export interface TextNode {
 	type: "text"
 	content: [TextPlainNode | TextLinkNode]
 }
+
+export interface ListNode {
+	type: "list"
+	content: [TextNode]
+	isOrdered?: boolean
+}
+
 
 export interface TextPlainNode {
 	type: "plain_text"
@@ -89,21 +98,14 @@ export interface TextLinkNode {
 	type: "link_text"
 	content: string
 	link: string
+	icon?: string
 }
 
-export interface CiteNode {
-	type: "cite"
-	index: number[]
-	reference: string[]
-}
 
-export interface LineBreakNode {
-	type: "line_break"
-}
 
 export interface FigureReferenceNode {
 	type: "figure"
 	id: string
 }
 
-export type ContentNodeTypes = ParagraphNode | TextNode | CiteNode | LineBreakNode | FigureReferenceNode
+export type ContentNodeTypes = ParagraphNode | TextNode | ListNode | FigureReferenceNode

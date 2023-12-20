@@ -5,6 +5,7 @@ import Cite from "../cite/cite"
 import LineBreak from "../lineBreak/lineBreak"
 import Paragraph from "../paragraph/paragraph"
 import Figure from "../figure/figure"
+import List from "../list/list"
 
 interface ContentProps {
 	name: string
@@ -30,12 +31,10 @@ const Content: FunctionComponent<ContentProps> = ({ name, contents, children, fi
 							<Text {...content} />
 						</p>
 					)
-				} else if (content.type === "cite") {
-					return <Cite key={name + "_cite_" + index} {...content} />
-				} else if (content.type === "line_break") {
-					return <LineBreak key={name + "_line_break_" + index} {...content} />
 				} else if (content.type === "paragraph") {
 					return <Paragraph key={name + "paragraph" + index} {...content} />
+				} else if (content.type === "list") {
+					return <List key={name + "list" + index} {...content} />
 				} else if (content.type === "figure") {
 					// TODO: This should be fiexed in the future
 					if (isInParagraph && index === 0) {

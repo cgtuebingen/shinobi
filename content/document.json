@@ -46,7 +46,7 @@
                         },
                         {
                             "type": "plain_text",
-                            "content": "can be initialized from very coarse view directions but still yield low quality reconstructions for many challenging scenes. Additionally, optimization takes more than 12 hours in the case of SAMURAI. In contrast, we propose a pipeline based on "
+                            "content": " can be initialized from very coarse view directions but still yield low quality reconstructions for many challenging scenes. Additionally, optimization takes more than 12 hours in the case of SAMURAI. In contrast, we propose a pipeline based on "
                         },
                         {
                             "type": "link_text",
@@ -62,15 +62,47 @@
                 {
                     "type": "list",
                     "content": [
-                        "Hybrid Multiresolution Hash Encoding with resolution level annealing",
-                        "Optimized camera parameterization and constraint camera multiplex using a projection based loss over all camera proposals for a given view",
-                        "Per-view importance weighting to leverage the important observation that some views are more useful for optimization than others",
-                        "Patch-based alignment losses to aid in camera alignment and reconstruction of high-frequency details"
+                        {
+                            "type": "text",
+                            "content": [
+                                {
+                                    "type": "plain_text",
+                                    "content": "Hybrid Multiresolution Hash Encoding with resolution level annealing"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "content": [
+                                {
+                                    "type": "plain_text",
+                                    "content": "Optimized camera parameterization and constraint camera multiplex using a projection based loss over all camera proposals for a given view"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "content": [
+                                {
+                                    "type": "plain_text",
+                                    "content": "Per-view importance weighting to leverage the important observation that some views are more useful for optimization than others"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "content": [
+                                {
+                                    "type": "plain_text",
+                                    "content": "Patch-based alignment losses to aid in camera alignment and reconstruction of high-frequency details"
+                                }
+                            ]
+                        }
                     ]
                 },
                 {
-                    "type": "youtube",
-                    "link": "https://youtu.be"
+                    "type": "figure",
+                    "id": "overview"
                 }
             ],
             "sections": [],

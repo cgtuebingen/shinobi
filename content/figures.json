@@ -87,6 +87,13 @@
             "/videos/shinobi_material_editing0_v05_compressed.mp4",
             "/videos/shinobi_material_editing1_v05_compressed.mp4"
         ]
+    },
+    "overview": {
+        "name": "Overview",
+        "type": "youtube",
+        "urls": [
+            "https://www.youtube.com/embed/V37Q3l6AFAU?si=xrcejZPZxjQ7Uf9K"
+        ]
     }
     
 }
