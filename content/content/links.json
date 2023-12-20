@@ -1,0 +1,32 @@
+[
+    {
+        "icon": "arxiv",
+        "name": "Paper",
+        "link": "https://arxiv.org"
+    },
+    {
+        "icon": "pdf",
+        "name": "Supplementary",
+        "link": "arxiv/shinobi_supplementary.pdf"
+    },
+    {
+        "icon": "github",
+        "name": "Code (coming soon)",
+        "link": ""
+    },
+    {
+        "icon": "youtube",
+        "name": "Video",
+        "link": "https://yotube.com/"
+    },
+    {
+        "icon": "magnifying_glass",
+        "name": "Results",
+        "link": ""
+    },
+    {
+        "icon": "bibtex",
+        "name": "Cite",
+        "link": ""
+    }
+]
