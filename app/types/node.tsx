@@ -77,7 +77,18 @@ export interface ParagraphNode {
 
 export interface TextNode {
 	type: "text"
+	content: [TextPlainNode | TextLinkNode]
+}
+
+export interface TextPlainNode {
+	type: "plain_text"
 	content: string
+}
+
+export interface TextLinkNode {
+	type: "link_text"
+	content: string
+	link: string
 }
 
 export interface CiteNode {

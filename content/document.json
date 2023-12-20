@@ -9,7 +9,12 @@
                 },
                 {
                     "type": "text",
-                    "content": "We present SHINOBI, an end-to-end framework for the reconstruction of shape, material, and illumination from object images captured with varying lighting, pose, and background. Inverse rendering of an object based on unconstrained image collections is a long-standing challenge in computer vision and graphics and requires a joint optimization over shape, radiance, and pose. We show that an implicit shape representation based on a multi-resolution hash encoding enables faster and robust shape reconstruction with joint camera alignment optimization that outperforms prior work. Further, to enable the editing of illumination and object reflectance (i.e. material) we jointly optimize BRDF and illumination together with the object's shape. Our method is class-agnostic and works on in-the-wild image collections of objects to produce relightable 3D assets for several use cases such as AR/VR, movies, games, etc."
+                    "content": [
+                        {
+                            "type": "plain_text",
+                            "content": "We present SHINOBI, an end-to-end framework for the reconstruction of shape, material, and illumination from object images captured with varying lighting, pose, and background. Inverse rendering of an object based on unconstrained image collections is a long-standing challenge in computer vision and graphics and requires a joint optimization over shape, radiance, and pose. We show that an implicit shape representation based on a multi-resolution hash encoding enables faster and robust shape reconstruction with joint camera alignment optimization that outperforms prior work. Further, to enable the editing of illumination and object reflectance (i.e. material) we jointly optimize BRDF and illumination together with the object's shape. Our method is class-agnostic and works on in-the-wild image collections of objects to produce relightable 3D assets for several use cases such as AR/VR, movies, games, etc."
+                        }
+                    ]
                 }
             ],
             "sections": [],
@@ -20,11 +25,48 @@
             "introduction": [
                 {
                     "type": "text",
-                    "content": "We present a category-agnostic technique to jointly reconstruct 3D shape and material properties of objects from unconstrained in-the-wild image collections. This data regime poses multiple challenges as images are captured in different environments using a variety of devices resulting in varying backgrounds, illumination, camera poses, and intrinsics. Conventional structure-from-motion techniques like COLMAP fail to reconstruct image collections under these challenging conditions. Recent methods like <a href='https://markboss.me/publication/2022-samurai/'>SAMURAI [2]</a> and <a href='https://jasonyzhang.com/ners/'>NeRS [3]</a> can be initialized from very coarse view directions but still yield low quality reconstructions for many challenging scenes. Additionally, optimization takes more than 12 hours in the case of SAMURAI. In contrast, we propose a pipeline based on <a href='https://nvlabs.github.io/instant-ngp/'>multiresolution hash grids [4]</a> which allows us to process more rays in a shorter time. Using this advantage we are able to improve reconstruction quality while still keeping a competitive optimization time (~4 hours). However, naive integration of multi-resolution hash grids is not well suited to camera pose estimation due to discontinuities in the gradients with respect to the input positions. We propose several components that work together to stabilize the camera pose optimization and encourage sharp features:"
+                    "content": [
+                        {
+                            "type": "plain_text",
+                            "content": "We present a category-agnostic technique to jointly reconstruct 3D shape and material properties of objects from unconstrained in-the-wild image collections. This data regime poses multiple challenges as images are captured in different environments using a variety of devices resulting in varying backgrounds, illumination, camera poses, and intrinsics. Conventional structure-from-motion techniques like COLMAP fail to reconstruct image collections under these challenging conditions. Recent methods like "
+                        },
+                        {
+                            "type": "link_text",
+                            "content": "SAMURAI [2]",
+                            "link": "https://markboss.me/publication/2022-samurai/"
+                        },
+                        {
+                            "type": "plain_text",
+                            "content": " and "
+                        },
+                        {
+                            "type": "link_text",
+                            "content": "NeRS [3]",
+                            "link": "https://jasonyzhang.com/ners/"
+                        },
+                        {
+                            "type": "plain_text",
+                            "content": "can be initialized from very coarse view directions but still yield low quality reconstructions for many challenging scenes. Additionally, optimization takes more than 12 hours in the case of SAMURAI. In contrast, we propose a pipeline based on "
+                        },
+                        {
+                            "type": "link_text",
+                            "content": "multiresolution hash grids [4]",
+                            "link": "https://nvlabs.github.io/instant-ngp/"
+                        },
+                        {
+                            "type": "plain_text",
+                            "content": " which allows us to process more rays in a shorter time. Using this advantage we are able to improve reconstruction quality while still keeping a competitive optimization time (~4 hours). However, naive integration of multi-resolution hash grids is not well suited to camera pose estimation due to discontinuities in the gradients with respect to the input positions. We propose several components that work together to stabilize the camera pose optimization and encourage sharp features:"
+                        }
+                    ]
                 },
                 {
                     "type": "list",
-                    "content": ["Hybrid Multiresolution Hash Encoding with resolution level annealing", "Optimized camera parameterization and constraint camera multiplex using a projection based loss over all camera proposals for a given view", "Per-view importance weighting to leverage the important observation that some views are more useful for optimization than others", "Patch-based alignment losses to aid in camera alignment and reconstruction of high-frequency details"]
+                    "content": [
+                        "Hybrid Multiresolution Hash Encoding with resolution level annealing",
+                        "Optimized camera parameterization and constraint camera multiplex using a projection based loss over all camera proposals for a given view",
+                        "Per-view importance weighting to leverage the important observation that some views are more useful for optimization than others",
+                        "Patch-based alignment losses to aid in camera alignment and reconstruction of high-frequency details"
+                    ]
                 },
                 {
                     "type": "youtube",
@@ -39,7 +81,12 @@
             "introduction": [
                 {
                     "type": "text",
-                    "content": "In Figure 1 we visualize the SHINOBI optimization pipeline. Two resolution annealed encoding branches, the multiresolution hash grid and the Fourier embedding are used to learn a neural volume conditioned on the input coordinates and illumination. Our patch-based losses and regularization scheme enables robust optimization of camera parameters jointly with the shape, material and per image illumination."
+                    "content": [
+                        {
+                            "type": "plain_text",
+                            "content": "In Figure 1 we visualize the SHINOBI optimization pipeline. Two resolution annealed encoding branches, the multiresolution hash grid and the Fourier embedding are used to learn a neural volume conditioned on the input coordinates and illumination. Our patch-based losses and regularization scheme enables robust optimization of camera parameters jointly with the shape, material and per image illumination."
+                        }
+                    ]
                 },
                 {
                     "type": "figure",
@@ -54,7 +101,12 @@
             "introduction": [
                 {
                     "type": "text",
-                    "content": "The parametric material model allows for controlled editing of the object’s appearance. Also the illumination can be adjusted, e.g. for realistic composites. A mesh extraction allows further editing and integration in the standard graphics pipeline including real-time rendering. SHINOBI can help in obtaining relightable 3D assets for e-commerce applications as well as 3D AR and VR for entertainment and education."
+                    "content": [
+                        {
+                            "type": "plain_text",
+                            "content": "The parametric material model allows for controlled editing of the object’s appearance. Also the illumination can be adjusted, e.g. for realistic composites. A mesh extraction allows further editing and integration in the standard graphics pipeline including real-time rendering. SHINOBI can help in obtaining relightable 3D assets for e-commerce applications as well as 3D AR and VR for entertainment and education."
+                        }
+                    ]
                 }
             ],
             "sections": [],
@@ -65,7 +117,21 @@
                     "contents": [
                         {
                             "type": "text",
-                            "content": "We show a scene featuring objects from the <a href='https://navidataset.github.io/'>NAVI dataset [1]</a> in a new consistent illumination environment as it would be required for AR and VR applications."
+                            "content": [
+                                {
+                                    "type": "plain_text",
+                                    "content": "We show a scene featuring objects from the "
+                                },
+                                {
+                                    "type": "link_text",
+                                    "content": "NAVI dataset [1]",
+                                    "link": "https://navidataset.github.io/"
+                                },
+                                {
+                                    "type": "plain_text",
+                                    "content": " in a new consistent illumination environment as it would be required for AR and VR applications."
+                                }
+                            ]
                         },
                         {
                             "type": "figure",
@@ -93,7 +159,21 @@
                     "contents": [
                         {
                             "type": "text",
-                            "content": "Example results from <a href='https://navidataset.github.io/'>NAVI dataset [1]</a>. Click on an image for an interactive 3D visualization."
+                            "content": [
+                                {
+                                    "type": "plain_text",
+                                    "content": "Example results from "
+                                },
+                                {
+                                    "type": "link_text",
+                                    "content": "NAVI dataset [1]",
+                                    "link": "https://navidataset.github.io/"
+                                },
+                                {
+                                    "type": "plain_text",
+                                    "content": ". Click on an image for an interactive 3D visualization."
+                                }
+                            ]
                         },
                         {
                             "type": "3drelight",

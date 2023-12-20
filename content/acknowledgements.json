@@ -3,7 +3,10 @@
     "content": [
         {
             "type": "text",
-            "content": "This work has been partially funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under Germany’s Excellence Strategy – EXC number 2064/1 – Project number 390727645 and SFB 1233, TP 02  -  Project number 276693517. It was supported by the German Federal Ministry of Education and Research (BMBF): Tübingen AI Center, FKZ: 01IS18039A."
+            "content": [{
+                "type": "plain_text",
+                "content": "This work has been partially funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under Germany’s Excellence Strategy – EXC number 2064/1 – Project number 390727645 and SFB 1233, TP 02  -  Project number 276693517. It was supported by the German Federal Ministry of Education and Research (BMBF): Tübingen AI Center, FKZ: 01IS18039A."
+            }]
         }
     ]
 }

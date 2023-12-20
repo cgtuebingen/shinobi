@@ -1,0 +1,22 @@
+{
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.bbl": true,
+    "**/*.fls": true,
+    "**/*.log": true,
+    "**/*.blg": true,
+    "**/*.gz": true,
+    "**/*.toc": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.sav": true,
+    "**/*.dbj": true
+    // ... any other file types you want to hide
+  },
+  "editor.formatOnSave": true,
+  "grammarly.files.include": [
+    "**/README.md",
+    "**/readme.md",
+    "**/*.txt",
+    "**/content/*.tex"
+  ]
+}

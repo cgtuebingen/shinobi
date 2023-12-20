@@ -12,7 +12,10 @@
                 "contents": [
                     {
                         "type": "text",
-                        "content": "reconstructs shape, illumination and materials from in-the-wild image collections."
+                        "content": [{
+                            "type": "plain_text",
+                            "content": "reconstructs shape, illumination and materials from in-the-wild image collections."
+                        }]
                     }
                 ]
             }
@@ -35,7 +38,10 @@
                 "contents": [
                     {
                         "type": "text",
-                        "content": "SHINOBI Pipeline Overview"
+                        "content": [{
+                            "type": "plain_text",
+                            "content": "SHINOBI Pipeline Overview"
+                        }]
                     }
                 ]
             }
@@ -58,7 +64,10 @@
                 "contents": [
                     {
                         "type": "text",
-                        "content": "Material decomposition compared to SAMURAI [2] on 'bald eagle' scene [1]."
+                        "content": [{
+                            "type": "plain_text",
+                            "content": "Material decomposition compared to SAMURAI [2] on 'bald eagle' scene [1]."
+                        }]
                     }
                 ]
             }
