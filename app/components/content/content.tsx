@@ -36,17 +36,16 @@ const Content: FunctionComponent<ContentProps> = ({ name, contents, children, fi
 				} else if (content.type === "list") {
 					return <List key={name + "list" + index} {...content} />
 				} else if (content.type === "figure") {
-					// TODO: This should be fiexed in the future
-					if (isInParagraph && index === 0) {
+					if (figures && figures[content.id]) {
+						// TODO: This should be fiexed in the future
 						return (
 							<>
-								<strong>{name}</strong>
-								{" — "}
+								{isInParagraph && index === 0 && (
+									<strong key={"hedaing_figure_" + index}>{name}</strong>
+								)}
+								<Figure key={name + "_figure_" + index} {...figures[content.id]} isInsideTextBlock />
 							</>
 						)
-					}
-					if (figures && figures[content.id]) {
-						return <Figure key={name + "_figure_" + index} {...figures[content.id]} isInsideTextBlock />
 					}
 				} else {
 					return <p key={name + "_" + index}> Error </p>

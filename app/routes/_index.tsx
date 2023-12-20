@@ -27,6 +27,7 @@ import ComparableSwappableVideo from "@/components/video/comparable_swappable_vi
 import Acknowledgements from "@/components/acknowledgements/acknowledgements"
 import { useEffect, useRef, useState } from "react"
 import StickyHeader from "@/components/stickyHeader/stickyHeader"
+import Relighter from "@/components/relighter/relight"
 
 export const loader: LoaderFunction = async (args: LoaderFunctionArgs) => {
 	// Header
@@ -99,6 +100,7 @@ const App = () => {
 					{document.chapters.map((chapter: ChapterNode, index: number) => (
 						<Chapter {...chapter} key={index} figures={figures} />
 					))}
+					<Relighter url="/models/baldeagle.jpg" />
 
 					<Citation {...citation} />
 					<Acknowledgements {...acknowledgements} />
