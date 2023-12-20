@@ -1,0 +1,18 @@
+[
+    {
+        "enum": 1,
+        "text": "V. Jampani et al., \“NAVI: Category-agnostic image collections with high-quality 3D shape and pose annotations\“, in NeurIPS, 2023."
+    },
+    {
+        "enum": 2,
+        "text": "M. Boss et al., \“SAMURAI: Shape And Material from Unconstrained Real-world Arbitrary Image collections\“, in NeurIPS, 2022."
+    },
+    {
+        "enum": 3,
+        "text": "J. Zhang, G. Yang, S. Tulsiani, and D. Ramanan, \“NeRS: Neural reflectance surfaces for sparse-view 3D reconstruction in the wild\“, in NeurIPS, 2021.",
+    },
+    {
+        "enum": 4,
+        "text": "T. Müller, A. Evans, C. Schied, and A. Keller, \“Instant neural graphics primitives with a multiresolution hash encoding\“, ACM Trans. Graph.,, 2022."
+    }
+]
