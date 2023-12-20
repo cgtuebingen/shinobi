@@ -1,0 +1,1 @@
+import{c as l,e as t}from"/build/_shared/chunk-DWFMXSZ6.js";var e=l(t(),1),o=()=>(0,e.jsxs)("div",{className:"w-full h-full flex flex-col bg-background justify-center  items-center",children:[(0,e.jsx)("h1",{children:"Imprint"}),(0,e.jsx)("p",{children:" Coming soon "})]}),f=o;export{f as default};
