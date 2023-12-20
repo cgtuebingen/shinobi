@@ -185,7 +185,34 @@
                         {
                             "type": "figure",
                             "id": "decomposition"
-                        }
+                        },
+                        {
+                            "type": "text",
+                            "content": [
+                                {
+                                    "type": "plain_text",
+                                    "content": "We reconstruct PBR material parameters basecolor, metallic and roughness. Compared to "
+                                },
+                                {
+                                    "type": "link_text",
+                                    "content": "SAMURAI [2]",
+                                    "link": "https://markboss.me/publication/2022-samurai/"
+                                },
+                                {
+                                    "type": "plain_text",
+                                    "content": " high-frequency details are better preserved while optimization time is reduced to roughly a third. Figure 2 shows an example object from the"
+                                },
+                                {
+                                   "type": "link_text",
+                                   "content": "NAVI dataset [1]",
+                                   "link": "https://navidataset.github.io/"
+                               },
+                               {
+                                   "type": "plain_text",
+                                   "content": "."
+                               }
+                            ]
+                        },
                     ]
                 },
                 {
