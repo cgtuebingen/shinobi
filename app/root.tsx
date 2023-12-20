@@ -43,7 +43,7 @@ export default function App() {
 				<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 			</head>
 			<body style={{ overscrollBehavior: "none" }}>
-				<script async src={`https://www.googletagmanager.com/gtag/js?id=G-0SNPJ02ZX8`} />
+				<script async src={`https://www.googletagmanager.com/gtag/js?id=G-H3WNEKDGDG`} />
 				<script
 					async
 					id="gtag-init"
@@ -53,7 +53,7 @@ export default function App() {
 								function gtag(){dataLayer.push(arguments);}
 								gtag('js', new Date());
 
-								gtag('config', 'G-0SNPJ02ZX8', {
+								gtag('config', 'G-H3WNEKDGDG', {
 								page_path: window.location.pathname,
 								});
 							`,
