@@ -1,3 +1,5 @@
+import { number } from "prop-types"
+
 export interface CitationNode {
 	type: string
 	name: string
@@ -10,6 +12,16 @@ export interface CitationNode {
 export interface AcknowledgementsNode {
 	name: string
 	content: [TextNode | ListNode]
+}
+
+export interface ReferencesNode {
+	name: string
+	content: [ReferenceNode]
+}
+
+export interface ReferenceNode {
+	enum: number
+	text: string
 }
 
 export interface AuthorNode {

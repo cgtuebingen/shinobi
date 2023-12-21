@@ -1,6 +1,6 @@
 {
-  "name": "signerf",
-  "homepage": ".",
+  "name": "shinobi",
+  "homepage": "https://jdihlmann.github.io/test_shinobi/",
   "private": true,
   "license": "ISC",
   "author": "",
@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev --manual",
+    "dev": "PORT=3000 remix dev --manual",
     "typecheck": "tsc",
     "start": "PORT=4160 npx remix-serve build/index.js",
     "transfer": "rsync -az --delete ./ --exclude '.env' --exclude 'node_modules' hetzner:/var/www/jdihlmann/signerf",

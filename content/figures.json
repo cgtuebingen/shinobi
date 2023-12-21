@@ -3,7 +3,7 @@
         "name": "Teaser",
         "type": "video",
         "urls": [
-            "/videos/shinobi_teaser.mp4"
+            "videos/shinobi_teaser.mp4"
         ],
         "styling": {
             "roundedCorners": false,
@@ -31,7 +31,7 @@
         "name": "Pipeline",
         "type": "video",
         "urls": [
-            "/videos/shinobi_overview_animated_website_v002.mp4"
+            "videos/shinobi_overview_animated_website_v002.mp4"
         ],
         "styling": {
             "roundedCorners": false,
@@ -60,7 +60,7 @@
         "name": "Decomposition",
         "type": "video",
         "urls": [
-            "/videos/decomposition_comparison_eagle_v001_compressed.mp4"
+            "videos/decomposition_comparison_eagle_v001_compressed.mp4"
         ],
         "styling": {
             "roundedCorners": false,
@@ -89,15 +89,15 @@
         "name": "Application Relighting",
         "type": "video",
         "urls": [
-            "/videos/shinobi_integrated_scene_relighting_v05_compressed.mp4"
+            "videos/shinobi_integrated_scene_relighting_v05_compressed.mp4"
         ]
     },
     "shinobi_scene_material_editing": {
         "name": "Application Material Editing",
         "type": "swappable_video",
         "urls": [
-            "/videos/shinobi_material_editing0_v05_compressed.mp4",
-            "/videos/shinobi_material_editing1_v05_compressed.mp4"
+            "videos/shinobi_material_editing0_v05_compressed.mp4",
+            "videos/shinobi_material_editing1_v05_compressed.mp4"
         ]
     },
     "overview": {

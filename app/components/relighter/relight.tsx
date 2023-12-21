@@ -1,28 +1,35 @@
 import { FigureStylingNode } from "@/types/node"
-import { Suspense, type FunctionComponent, useEffect } from "react"
-import { Canvas, useFrame } from "@react-three/fiber"
-import React, { useRef, useState } from "react"
-import { Environment } from "@react-three/drei"
-import Scene from "./scene"
+import React, { useEffect, type FunctionComponent } from "react"
 
 interface RelighterProps {
-	url: string
 	styling?: FigureStylingNode
 	children?: React.ReactNode
 }
 
-const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }) => {
+const Relighter: FunctionComponent<RelighterProps> = ({ styling, children }) => {
 	const roundedCorners = styling == undefined ? true : styling.roundedCorners
 	const scaleContent = styling == undefined ? 1.0 : styling.scaleContent
 	const showControls = styling == undefined ? false : styling.showControls
 	const objectFit = styling == undefined ? "cover" : styling.objectFit
+	const [selected, setSelected] = React.useState(0)
+
+	const usable_assets = [
+		"tractor",
+		"remotecar",
+		"keywest",
+		"lion",
+		"baldeagle",
+		"fireengine",
+		"pumpkin",
+		"dino_5",
+		"hutmushroom",
+		"colored_box",
+	]
 
 	useEffect(() => {
 		var urlParams = new URLSearchParams(window.location.search)
-		var sceneName = urlParams.get("scene")
-		if (sceneName === null) {
-			sceneName = "tractor"
-		}
+		const sceneName = usable_assets[selected]
+
 		var auto_rotate = urlParams.get("rotate")
 		if (auto_rotate === null) {
 			auto_rotate = "0"
@@ -33,6 +40,7 @@ const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }
 		const baseHdriFolder = "/hdris/"
 
 		const canvas = document.getElementById("renderCanvas") // Get the canvas element
+		canvas.addEventListener("wheel", (evt) => evt.preventDefault())
 		const engine = new BABYLON.Engine(canvas, true) // Generate the BABYLON 3D engine
 		var scene = new BABYLON.Scene(engine)
 
@@ -40,14 +48,15 @@ const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }
 			"camera1",
 			Math.PI * 0.5,
 			Math.PI / 2.5,
-			2.0,
+			1.5,
 			BABYLON.Vector3.Zero(),
 			scene,
 		)
+
 		camera.panningSensibility = 0
 		camera.lowerRadiusLimitSearch = 0.015
 		camera.minZ = 0.3
-		//camera.wheelDeltaPercentage = 0.01
+		camera.wheelDeltaPercentage = 0.05
 		if (!should_rotate) {
 			camera.attachControl(canvas, true)
 		} else {
@@ -73,7 +82,7 @@ const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }
 		grid.addColumnDefinition(1.0 / 4.0) // 4
 		grid.addRowDefinition(1.0 / 8.0)
 		grid.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM
-		grid.height = 1.0 / 8.0
+		grid.height = 2.0 / 8.0
 		grid.width = 1.0
 
 		var hdri_func = function (path) {
@@ -156,14 +165,14 @@ const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }
 					canvas.addEventListener("pointerup", stop)
 				}
 			})
-			panel.addControl(checkbox)
+			/* panel.addControl(checkbox)
 			var header = new BABYLON.GUI.TextBlock()
 			header.text = "Rotate Camera"
 			header.width = "180px"
 			header.marginLeft = "10px"
 			header.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT
 			header.color = "white"
-			panel.addControl(header)
+			panel.addControl(header) */
 		}
 
 		BABYLON.SceneLoader.OnPluginActivatedObservable.addOnce(function (loader) {
@@ -191,26 +200,26 @@ const Relighter: FunctionComponent<RelighterProps> = ({ url, styling, children }
 		window.addEventListener("resize", function () {
 			engine.resize()
 		})
-	}, [])
+	}, [selected])
 
 	return (
-		<div
-			className="relative w-full bg-slate-200"
-			style={{ height: "400px" }}
-			onWheel={(e) => {
-				e.preventDefault()
-				e.stopPropagation()
-			}}
-		>
-			<canvas
-				id="renderCanvas"
-				touch-action="none"
-				className="absolute top-0 left-0 w-full h-full"
-				onWheel={(e) => {
-					e.preventDefault()
-					e.stopPropagation()
-				}}
-			></canvas>
+		<div className="relative w-full bg-slate-200 rounded-lg" style={{ height: "40rem", overflow: "hidden" }}>
+			<canvas id="renderCanvas" touch-action="none" className="absolute top-0 left-0 w-full h-full"></canvas>
+			<div className="absolute top-0 left-0 w-full h-20 grid grid-cols-fill gap-0 grid-flow-col">
+				{usable_assets.map((asset, index) => (
+					<div key={index} className="relative w-auto h-auto">
+						<img
+							src={"/models/" + asset + ".jpg"}
+							alt={asset}
+							className="w-full h-full object-cover"
+							style={{ aspectRatio: "1 / 1" }}
+							onClick={() => {
+								setSelected(index)
+							}}
+						/>
+					</div>
+				))}
+			</div>
 		</div>
 	)
 }

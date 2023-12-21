@@ -33,17 +33,18 @@ export default function App() {
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="favicon.ico" />
 				<Meta />
 				<Links />
 				<title>{title.title}</title>
 
-				<script src="/babylon/babylon.js"></script>
-				<script src="/babylon/babylonjs.loaders.min.js"></script>
-				<script src="/babylon/babylon.gui.min.js"></script>
+				<script src="babylon/babylon.js"></script>
+				<script src="babylon/babylonjs.loaders.min.js"></script>
+				<script src="babylon/babylon.gui.min.js"></script>
 				<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 			</head>
 			<body style={{ overscrollBehavior: "none" }}>
-				<script async src={`https://www.googletagmanager.com/gtag/js?id=G-0SNPJ02ZX8`} />
+				<script async src={`https://www.googletagmanager.com/gtag/js?id=G-H3WNEKDGDG`} />
 				<script
 					async
 					id="gtag-init"
@@ -53,7 +54,7 @@ export default function App() {
 								function gtag(){dataLayer.push(arguments);}
 								gtag('js', new Date());
 
-								gtag('config', 'G-0SNPJ02ZX8', {
+								gtag('config', 'G-H3WNEKDGDG', {
 								page_path: window.location.pathname,
 								});
 							`,

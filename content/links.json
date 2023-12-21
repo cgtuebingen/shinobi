@@ -22,11 +22,11 @@
     {
         "icon": "results",
         "name": "Results",
-        "link": ""
+        "link": "#Results"
     },
     {
         "icon": "bibtex",
         "name": "Cite",
-        "link": ""
+        "link": "#Citation"
     }
 ]
