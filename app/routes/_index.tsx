@@ -26,6 +26,7 @@ import { join } from "path"
 import { useState } from "react"
 import Chapter from "@/components/chapter/chapter"
 import References from "@/components/references/references"
+import RelighterR3F from "@/components/relighter/relight_r3f"
 
 export const loader: LoaderFunction = async (args: LoaderFunctionArgs) => {
 	// Header
@@ -102,7 +103,7 @@ const App = () => {
 						<Chapter {...chapter} key={index} figures={figures} />
 					))}
 					<Relighter />
-
+					<RelighterR3F />
 					<Citation {...citation} />
 					<Acknowledgements {...acknowledgements} />
 					<References {...references} />
