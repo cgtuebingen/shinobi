@@ -37,24 +37,7 @@
             "roundedCorners": false,
             "showControls": true,
             "objectFit": "contain"
-        },
-        "captions": [
-            {
-                "type": "paragraph",
-                "name": "Figure 1",
-                "contents": [
-                    {
-                        "type": "text",
-                        "content": [
-                            {
-                                "type": "plain_text",
-                                "content": "SHINOBI Pipeline Overview"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+        }
     },
     "decomposition": {
         "name": "Decomposition",
@@ -66,24 +49,7 @@
             "roundedCorners": false,
             "showControls": false,
             "objectFit": "contain"
-        },
-        "captions": [
-            {
-                "type": "paragraph",
-                "name": "Figure 2",
-                "contents": [
-                    {
-                        "type": "text",
-                        "content": [
-                            {
-                                "type": "plain_text",
-                                "content": "Material decomposition compared to SAMURAI [2] on 'bald eagle' scene [1]."
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+        }
     },
     "shinobi_scene_relighting": {
         "name": "Application Relighting",

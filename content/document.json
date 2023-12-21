@@ -31,7 +31,7 @@
                     "content": [
                         {
                             "type": "plain_text",
-                            "content": "We present a category-agnostic technique to jointly reconstruct 3D shape and material properties of objects from unconstrained in-the-wild image collections. This data regime poses multiple challenges as images are captured in different environments using a variety of devices resulting in varying backgrounds, illumination, camera poses, and intrinsics. Conventional structure-from-motion techniques like COLMAP fail to reconstruct image collections under these challenging conditions. Recent methods like "
+                            "content": "SHINOBI is a category-agnostic technique to jointly reconstruct 3D shape and material properties of objects from unconstrained in-the-wild image collections. This data regime poses multiple challenges as images are captured in different environments using a variety of devices resulting in varying backgrounds, illumination, camera poses, and intrinsics. Conventional structure-from-motion techniques like COLMAP fail to reconstruct image collections under these challenging conditions. Recent methods like "
                         },
                         {
                             "type": "link_text",
@@ -119,7 +119,7 @@
                     "content": [
                         {
                             "type": "plain_text",
-                            "content": "In Figure 1 we visualize the SHINOBI optimization pipeline. Two resolution annealed encoding branches, the multiresolution hash grid and the Fourier embedding are used to learn a neural volume conditioned on the input coordinates and illumination. Our patch-based losses and regularization scheme enables robust optimization of camera parameters jointly with the shape, material and per image illumination."
+                            "content": "In the figure below we visualize the SHINOBI optimization pipeline. Two resolution annealed encoding branches, the multiresolution hash grid and the Fourier embedding are used to learn a neural volume conditioned on the input coordinates and illumination. Our patch-based losses and regularization scheme enables robust optimization of camera parameters jointly with the shape, material and per image illumination."
                         }
                     ]
                 },
@@ -196,7 +196,7 @@
                                 },
                                 {
                                     "type": "plain_text",
-                                    "content": " high-frequency details are better preserved while optimization time is reduced to roughly a third. Figure 2 shows an example object from the"
+                                    "content": " high-frequency details are better preserved while optimization time is reduced to roughly a third. Here we show the \"bald eagle\" object from the"
                                 },
                                 {
                                     "type": "link_text",
@@ -233,7 +233,7 @@
                                 },
                                 {
                                     "type": "plain_text",
-                                    "content": ". Click on an image for an interactive 3D visualization."
+                                    "content": ". Click on an image for an interactive 3D visualization. Select different environment maps for illumination below."
                                 }
                             ]
                         }

@@ -5,11 +5,6 @@
         "link": "https://arxiv.org"
     },
     {
-        "icon": "pdf",
-        "name": "Supplementary",
-        "link": "arxiv/shinobi_supplementary.pdf"
-    },
-    {
         "icon": "github",
         "name": "Code (coming soon)",
         "link": ""
