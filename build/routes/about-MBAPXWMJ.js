@@ -1,0 +1,1 @@
+import{b as l}from"/build/_shared/chunk-3Z32TANI.js";import{d as o}from"/build/_shared/chunk-T36URGAI.js";var e=o(l(),1),t=()=>(0,e.jsxs)("div",{className:"w-full h-full flex flex-col bg-background justify-center  items-center",children:[(0,e.jsx)("h1",{children:"About"}),(0,e.jsx)("p",{children:" Coming soon "})]}),f=t;export{f as default};
