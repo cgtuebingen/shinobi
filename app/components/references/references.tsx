@@ -10,10 +10,10 @@ const References: FunctionComponent<ReferencesProps> = ({ name, content, childre
 	return (
 		<>
 			<div className="space-y-3 pt-16">
-				<h1 className="text-primary font-sans text-xl font-bold">{"References"}</h1>
+				<h1 className="text-primary font-sans text-xl font-bold dark:text-white">{"References"}</h1>
 				<p className="text-justify block font-normal "></p> {/* FIXME: Bad practice just for spacing for now */}
 				{content.map((reference, index) => (
-					<p className="text-justify block font-normal " key={index}>
+					<p className="text-primary text-justify block font-normal dark:text-white" key={index}>
 						{" "}
 						{"[" + reference.enum + "]"} {reference.text}{" "}
 					</p>

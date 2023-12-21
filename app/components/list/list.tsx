@@ -11,7 +11,7 @@ const List: FunctionComponent<ListProps> = ({ content, isOrdered = false }) => {
 	return (
 		<>
 			{isOrdered ? (
-				<ol className="list-outside ml-5  text-justify block font-normal">
+				<ol className="list-outside ml-5  text-justify block font-normal text-primary dark:text-white">
 					{content.map((textNode, index) => (
 						<li key={index}>
 							<Text {...textNode} />
@@ -19,7 +19,7 @@ const List: FunctionComponent<ListProps> = ({ content, isOrdered = false }) => {
 					))}
 				</ol>
 			) : (
-				<ul className="list-disc list-outside ml-5 text-justify block font-normal ">
+				<ul className="list-disc list-outside ml-5 text-justify block font-normal text-primary dark:text-white">
 					{content.map((textNode, index) => (
 						<li key={index}>
 							<Text {...textNode} />

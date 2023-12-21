@@ -8,13 +8,13 @@ interface LinkProps extends LinkNode {
 const Link: FunctionComponent<LinkProps> = ({ link, name, icon, children }) => {
 	return (
 		<button
-			className="flex flex-row items-center space-x-1.5 rounded-full pl-1.5 pr-3 py-1 bg-black bg-opacity-90 hover:bg-opacity-80"
+			className="flex flex-row items-center space-x-1.5 rounded-full pl-1.5 pr-3 py-1 bg-black bg-opacity-90 hover:bg-opacity-80 transition duration-200 ease-in-out cursor-pointer"
 			onClick={() => {
 				window.open(link, "_blank")
 			}}
 		>
 			<img src={"icons/" + icon + ".svg"} />
-			<span className="text-m  text-white">{name}</span>
+			<span className="text-m  text-white ">{name}</span>
 		</button>
 	)
 }

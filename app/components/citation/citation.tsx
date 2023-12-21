@@ -24,16 +24,16 @@ const Citation: FunctionComponent<CitationProps> = ({ type, name, authors, title
 
 	return (
 		<div className="space-y-3 pt-16" id="Citation">
-			<h1 className="text-primary font-sans text-xl font-bold">Citation</h1>
+			<h1 className="text-primary font-sans text-xl font-bold dark:text-white">Citation</h1>
 
-			<div className="group relative rounded-lg bg-black bg-opacity-5 hover:bg-opacity-10 transition duration-200 ease-in-out p-2">
+			<div className="group relative rounded-lg bg-black bg-opacity-5 hover:bg-opacity-10 transition duration-200 ease-in-out p-2 dark:bg-white dark:bg-opacity-5 dark:hover:bg-opacity-10">
 				<button
 					onClick={() => {
 						copyToClipboard()
 						setTimeout(() => setIsCopied(false), 2000)
 					}}
 					onMouseLeave={() => setIsCopied(false)}
-					className="opacity-0 group-hover:opacity-100 absolute top-2 right-2 p-2 rounded-lg bg-black text-white transition duration-200 ease-in-out cursor-pointer z-10 hover:bg-opacity-80"
+					className="opacity-0 group-hover:opacity-100 absolute top-2 right-2 p-2 rounded-lg bg-black text-white transition duration-200 ease-in-out cursor-pointer z-10 hover:bg-opacity-80 dark:bg-white dark:bg-opacity-5 dark:hover:bg-opacity-80 dark:text-black"
 				>
 					{isCopied ? (
 						<img src="/icons/success.svg" className="w-4 h-4" alt="Copy to Clipboard" />
@@ -41,7 +41,7 @@ const Citation: FunctionComponent<CitationProps> = ({ type, name, authors, title
 						<img src="/icons/copy.svg" className="w-4 h-4" alt="Copy to Clipboard" />
 					)}
 				</button>
-				<div ref={citationRef} className="text-justify grid grid-cols-[auto_1fr]">
+				<div ref={citationRef} className="text-justify grid grid-cols-[auto_1fr] text-primary dark:text-white">
 					<span>@{type}&#123;</span>
 					<span>{name},</span> {/* Empty cell for alignment */}
 					<span className="pl-12">author =</span>

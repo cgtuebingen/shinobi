@@ -23,7 +23,7 @@ const Header: FunctionComponent<HeaderProps> = ({ children, onScrolledPassed }) 
 	}, [onScrolledPassed, ref])
 
 	return (
-		<div className="w-full flex flex-col justify-center items-center space-y-5 pb-10" ref={ref}>
+		<div className="w-full flex flex-col justify-center items-center space-y-5 pb-10 bg-white rounded-lg" ref={ref}>
 			{children}
 		</div>
 	)

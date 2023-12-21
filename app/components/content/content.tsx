@@ -21,7 +21,10 @@ const Content: FunctionComponent<ContentProps> = ({ name, contents, children, fi
 			{contents.map((content, index) => {
 				if (content.type === "text") {
 					return (
-						<p key={name + "_text_" + index} className="text-justify block font-normal ">
+						<p
+							key={name + "_text_" + index}
+							className="text-justify block font-normal text-primary dark:text-white"
+						>
 							{isInParagraph && index === 0 && (
 								<>
 									<strong>{name}</strong>
@@ -39,7 +42,7 @@ const Content: FunctionComponent<ContentProps> = ({ name, contents, children, fi
 					if (figures && figures[content.id]) {
 						// TODO: This should be fiexed in the future
 						return (
-							<div key={name + "_figure_" + index}>
+							<div key={name + "_figure_" + index} className="text-primary dark:text-white">
 								{isInParagraph && index === 0 && (
 									<strong key={"hedaing_figure_" + index}>{name}</strong>
 								)}
