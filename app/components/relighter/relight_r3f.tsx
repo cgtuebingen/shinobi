@@ -26,7 +26,7 @@ const RelighterR3F: FunctionComponent<RelighterR3FProps> = ({ styling, children 
 	const [selectedModel, setSelectedModel] = React.useState(0)
 	const [selectedHDR, setSelectedHDR] = React.useState(0)
 
-	const usable_hdrs = ["forest_slope", "lebombo", "photo_studio", "urban_alley"]
+	const usable_hdrs = ["lebombo", "photo_studio", "forest_slope", "urban_alley"]
 
 	const usable_assets = [
 		"tractor",
@@ -42,7 +42,7 @@ const RelighterR3F: FunctionComponent<RelighterR3FProps> = ({ styling, children 
 	]
 
 	return (
-		<div className="flex flex-col justify-center items-center gap-2 pt-8">
+		<div className="flex flex-col justify-center items-center gap-2">
 			<div className="w-full h-20 grid grid-cols-fill gap-2 grid-flow-col ">
 				{usable_assets.map((asset, index) => (
 					<button
@@ -87,16 +87,17 @@ const RelighterR3F: FunctionComponent<RelighterR3FProps> = ({ styling, children 
 						maxDistance={0.8}
 					/>
 					<Environment files={"hdris/" + usable_hdrs[selectedHDR] + ".hdr"} background blur={0.3} />
-					{usable_assets[selectedModel] == "tractor" && <Tractor />}
-					{usable_assets[selectedModel] == "remotecar" && <RemoteCar />}
-					{usable_assets[selectedModel] == "keywest" && <Keywest />}
-					{usable_assets[selectedModel] == "lion" && <Lion />}
-					{usable_assets[selectedModel] == "fireengine" && <Fireengine />}
-					{usable_assets[selectedModel] == "baldeagle" && <Baldeagle />}
-					{usable_assets[selectedModel] == "colored_box" && <ColoredBox />}
-					{usable_assets[selectedModel] == "dino_5" && <Dino5 />}
-					{usable_assets[selectedModel] == "hutmushroom" && <Hutmushroom />}
+
+					{usable_assets[selectedModel] == "tractor" && <Tractor rotation={[0, Math.PI * 0.8, 0]} />}
+					{usable_assets[selectedModel] == "remotecar" && <RemoteCar rotation={[0, Math.PI * 0.8, 0]} />}
+					{usable_assets[selectedModel] == "keywest" && <Keywest rotation={[0, Math.PI, 0]} />}
+					{usable_assets[selectedModel] == "lion" && <Lion rotation={[0, Math.PI * 0.8, 0]} />}
+					{usable_assets[selectedModel] == "baldeagle" && <Baldeagle rotation={[0, Math.PI * 0.9, 0]} />}
+					{usable_assets[selectedModel] == "fireengine" && <Fireengine rotation={[0, Math.PI * 0.8, 0]} />}
 					{usable_assets[selectedModel] == "pumpkin" && <Pumpkin />}
+					{usable_assets[selectedModel] == "dino_5" && <Dino5 rotation={[0, Math.PI * 1.5, 0]} />}
+					{usable_assets[selectedModel] == "hutmushroom" && <Hutmushroom rotation={[0, Math.PI * 1.1, 0]} />}
+					{usable_assets[selectedModel] == "colored_box" && <ColoredBox rotation={[0, Math.PI * 0.7, 0]} />}
 				</Canvas>
 			</div>
 
