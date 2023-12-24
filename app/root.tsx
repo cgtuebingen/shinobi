@@ -25,7 +25,7 @@ export default function App() {
 	const { title } = useLoaderData() as { title: TitleNode }
 
 	useEffect(() => {
-		gtag.pageview(location.pathname, "G-0SNPJ02ZX8")
+		gtag.pageview(location.pathname, "G-H3WNEKDGDG")
 	}, [location])
 
 	return (
