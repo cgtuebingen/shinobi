@@ -13,10 +13,10 @@
         ["Hendrik P.A.", "Lensch"],
         ["Varun", "Jampani"]
     ],
-    "title": "{{SHINOBI}: {Sh}ape and {I}llumination using {N}eural {O}bject Decomposition via {B}RDF Optimization {I}n-the-wild}",
-    "booktitle": "{preprint}",
+    "title": "{SHINOBI}: {Sh}ape and {I}llumination using {N}eural {O}bject Decomposition via {B}RDF Optimization {I}n-the-wild",
+    "booktitle": "preprint",
     "year": 2023,
     "eprint": "{}",
-    "archivePrefix": "{arXiv}",
-    "primaryClass": "{cs.CV}"
+    "archivePrefix": "arXiv",
+    "primaryClass": "cs.CV"
 }
