@@ -6,7 +6,7 @@
             "videos/shinobi_teaser.mp4"
         ],
         "styling": {
-            "roundedCorners": false,
+            "roundedCorners": true,
             "objectFit": "contain"
         }
     },
@@ -17,7 +17,7 @@
             "videos/shinobi_overview_animated_website_v002.mp4"
         ],
         "styling": {
-            "roundedCorners": false,
+            "roundedCorners": true,
             "showControls": true,
             "objectFit": "contain"
         }
@@ -29,7 +29,7 @@
             "videos/decomposition_comparison_eagle_v001_compressed.mp4"
         ],
         "styling": {
-            "roundedCorners": false,
+            "roundedCorners": true,
             "showControls": false,
             "objectFit": "contain"
         }
