@@ -17,6 +17,7 @@ import type {
 	InstitutionNode,
 	LinkNode,
 	ReferencesNode,
+	TextNode,
 	TitleNode,
 } from "@/types/node"
 import { json, type LoaderFunction, type LoaderFunctionArgs } from "@remix-run/node"
@@ -27,6 +28,9 @@ import { useState } from "react"
 import Chapter from "@/components/chapter/chapter"
 import References from "@/components/references/references"
 import RelighterR3F from "@/components/relighter/relight_r3f"
+import Footer from "@/components/footer/footer"
+import Figure from "@/components/figure/figure"
+import Paragraph from "@/components/paragraph/paragraph"
 
 export const loader: LoaderFunction = async (args: LoaderFunctionArgs) => {
 	// Header
@@ -73,6 +77,18 @@ const App = () => {
 
 	const [showStickyHeader, setShowStickyHeader] = useState(false)
 
+	const teaserFigureText: [TextNode] = [
+		{
+			type: "text",
+			content: [
+				{
+					type: "plain_text",
+					content: "reconstructs shape, illumination and materials from in-the-wild image collections.",
+				},
+			],
+		},
+	]
+
 	return (
 		<>
 			{showStickyHeader && <StickyHeader title={title.title} links={links} />}
@@ -89,26 +105,24 @@ const App = () => {
 						<Links links={links} />
 					</Header>
 
-					{/* <div className="pt-2">{figures["overview"] && <Figure {...figures["overview"]} />}</div> */}
-
-					{/* {figures["object_editing_bear"] && (
-								<ComparableSwappableVideo {...figures["object_editing_bear"]} />
-							)} */}
-					{/* <ComparableVideo
-								videoSrc1="/videos/bear_original.mp4"
-								videoSrc2="/videos/bear_grizzly_sdxl.mp4"
-							/> */}
+					<div className="pt-2">
+						{figures["teaser"] && (
+							<Figure {...figures["teaser"]}>
+								<Paragraph type={"paragraph"} name={"SHINOBI"} contents={teaserFigureText} />
+							</Figure>
+						)}
+					</div>
 
 					{document.chapters.map((chapter: ChapterNode, index: number) => (
 						<Chapter {...chapter} key={index} figures={figures} />
 					))}
-					{/* <Relighter /> */}
 					<RelighterR3F />
 					<Citation {...citation} />
 					<Acknowledgements {...acknowledgements} />
 					<References {...references} />
 				</div>
 			</div>
+			<Footer title={title.title} links={links} />
 		</>
 	)
 }

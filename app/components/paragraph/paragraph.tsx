@@ -9,7 +9,7 @@ interface ParagraphProps extends ParagraphNode {
 
 const Paragraph: FunctionComponent<ParagraphProps> = ({ name, contents, children, figures }) => {
 	return (
-		<div className="prose mt-3">
+		<div className="prose mt-3 pb-6">
 			<Content name={name} contents={contents} figures={figures} isInParagraph />
 		</div>
 	)

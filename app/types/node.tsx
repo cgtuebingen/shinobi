@@ -1,5 +1,3 @@
-import { number } from "prop-types"
-
 export interface CitationNode {
 	type: string
 	name: string
@@ -38,6 +36,12 @@ export interface LinkNode {
 	name: string
 	link: string
 	icon: string
+	styling?: LinkStylingNode
+}
+
+export interface LinkStylingNode {
+	includeInHeader?: boolean
+	includeInStickyHeader?: number
 }
 
 export interface InstitutionNode {
@@ -50,7 +54,7 @@ export interface FigureNode {
 	name: string
 	type: "image" | "video" | "swappable_video" | "multi_video" | "blur_video" | "youtube"
 	urls: string[]
-	captions?: ParagraphNode[]
+	captions?: [TextNode | ListNode][]
 	styling?: FigureStylingNode
 }
 
@@ -94,7 +98,7 @@ export interface ParagraphNode {
 
 export interface TextNode {
 	type: "text"
-	content: [TextPlainNode | TextLinkNode]
+	content: [TextPlainNode | TextLinkNode | TextBoldNode | TextEnumerateNode]
 }
 
 export interface ListNode {
@@ -108,11 +112,21 @@ export interface TextPlainNode {
 	content: string
 }
 
+export interface TextBoldNode {
+	type: "bold_text"
+	content: string
+}
+export interface TextEnumerateNode {
+	type: "enumerate_text"
+	content: string
+}
+
 export interface TextLinkNode {
 	type: "link_text"
 	content: string
 	link: string
 	icon?: string
+	gtag_label?: string
 }
 
 export interface FigureReferenceNode {

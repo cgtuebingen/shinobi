@@ -8,24 +8,7 @@
         "styling": {
             "roundedCorners": false,
             "objectFit": "contain"
-        },
-        "captions": [
-            {
-                "type": "paragraph",
-                "name": "SHINOBI",
-                "contents": [
-                    {
-                        "type": "text",
-                        "content": [
-                            {
-                                "type": "plain_text",
-                                "content": "reconstructs shape, illumination and materials from in-the-wild image collections."
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+        }
     },
     "pipeline": {
         "name": "Pipeline",

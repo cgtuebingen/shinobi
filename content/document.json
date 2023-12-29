@@ -7,10 +7,6 @@
             },
             "introduction": [
                 {
-                    "type": "figure",
-                    "id": "teaser"
-                },
-                {
                     "type": "text",
                     "content": [
                         {

@@ -1,38 +1,50 @@
+import React, { forwardRef } from "react"
 import { FigureStylingNode } from "@/types/node"
-import { type FunctionComponent } from "react"
 
 interface VideoProps {
 	url: string
+	classNameDiv?: string
+	classNameVideo?: string
 	styling?: FigureStylingNode
 	children?: React.ReactNode
+	onHover?: (hover: boolean) => void
 }
 
-const Video: FunctionComponent<VideoProps> = ({ url, styling, children }) => {
-	const roundedCorners = styling == undefined ? true : styling.roundedCorners
-	const scaleContent = styling == undefined ? 1.0 : styling.scaleContent
-	const showControls = styling == undefined ? false : styling.showControls
-	const objectFit = styling == undefined ? "cover" : styling.objectFit
+const Video = forwardRef<HTMLVideoElement, VideoProps>(
+	({ url, classNameDiv, classNameVideo, styling, children, onHover }, ref) => {
+		const roundedCorners = styling?.roundedCorners ?? true
+		const showControls = styling?.showControls ?? false
+		const objectFit = styling?.objectFit ?? "cover"
+		const scaleContent = styling?.scaleContent ?? 1
 
-	return (
-		<div className="relative w-full" style={{ paddingTop: objectFit == "cover" ? "56.25%" : 0 }}>
-			<video
-				autoPlay
-				loop
-				controls={showControls}
-				//@ts-ignore
-				playsInline
-				muted
-				className={objectFit == "cover" ? "absolute top-0 left-0 w-full h-full" : ""}
-				style={{
-					objectFit: objectFit,
-					borderRadius: roundedCorners ? "0.5rem" : "0",
-					transform: `scale(${scaleContent})`,
-				}}
+		return (
+			<div
+				className={classNameDiv ? classNameDiv : "w-full h-full overflow-hidden"}
+				onMouseEnter={() => onHover && onHover(true)}
+				onMouseLeave={() => onHover && onHover(false)}
+				onTouchStart={() => onHover && onHover(true)}
+				onTouchEnd={() => onHover && onHover(false)}
+				style={{ borderRadius: roundedCorners ? "0.5rem" : "0" }}
 			>
-				<source src={url} type="video/mp4" data-src={url} />
-			</video>
-		</div>
-	)
-}
+				<video
+					autoPlay
+					loop
+					controls={showControls}
+					playsInline
+					muted
+					className={classNameVideo ? classNameVideo : "w-full h-full"}
+					style={{
+						objectFit: objectFit,
+						transform: `scale(${scaleContent})`,
+						transformOrigin: "center center",
+					}}
+					ref={ref}
+				>
+					<source src={url} type="video/mp4" />
+				</video>
+			</div>
+		)
+	},
+)
 
 export default Video

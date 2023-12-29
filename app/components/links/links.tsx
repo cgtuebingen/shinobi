@@ -11,7 +11,12 @@ const Links: FunctionComponent<LinksProps> = ({ links, children }) => {
 	return (
 		<div className="w-full flex flex-wrap justify-center items-center gap-5">
 			{links.map((link, index) => {
-				return <Link key={link.name} {...link} />
+				const includeInHeader = link.styling ? link.styling.includeInHeader : true
+				if (includeInHeader) {
+					return <Link key={link.name} {...link} />
+				} else {
+					return null
+				}
 			})}
 		</div>
 	)
