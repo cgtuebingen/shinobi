@@ -48,7 +48,7 @@ export default function App() {
 					property="og:description"
 					content="Shape and Illumination using Neural Object Decomposition via BRDF Optimization In-the-wild"
 				/>
-				<meta property="og:image" content="" />
+				<meta property="og:image" content="images/preview.jpg" />
 
 				{/* <!-- Twitter Meta Tags --> */}
 				<meta name="twitter:card" content="summary_large_image" />
@@ -59,7 +59,7 @@ export default function App() {
 					name="twitter:description"
 					content="Shape and Illumination using Neural Object Decomposition via BRDF Optimization In-the-wild"
 				/>
-				<meta name="twitter:image" content="" />
+				<meta name="twitter:image" content="images/preview.jpg" />
 
 				<link rel="icon" href="favicon.ico" />
 				<Meta />
