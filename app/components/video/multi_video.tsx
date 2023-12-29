@@ -1,25 +1,27 @@
-import { FigureStylingNode } from "@/types/node"
-import { useRef, type FunctionComponent, useEffect } from "react"
+import React, { useRef, useEffect, type FunctionComponent, useState } from "react"
 
-interface VideoProps {
+import { FigureStylingNode, TextNode, ListNode } from "@/types/node"
+import Video from "./video"
+import Content from "../content/content"
+
+interface MultiVideoProps {
 	urls: string[]
+	captions?: [TextNode | ListNode][]
 	styling?: FigureStylingNode
 	children?: React.ReactNode
 }
 
-const MultiVideo: FunctionComponent<VideoProps> = ({ urls, styling, children }) => {
-	const roundedCorners = styling == undefined ? true : styling.roundedCorners
-	const scaleContent = styling == undefined ? 1.0 : styling.scaleContent
-	const objectFit = styling == undefined ? "cover" : styling.objectFit
-
+const MultiVideo: FunctionComponent<MultiVideoProps> = ({ urls, captions, styling, children }) => {
 	const videosRefs = useRef<HTMLVideoElement[]>([])
 	const videoCurrentTime = useRef<number>(0)
+	const [hoveredVideoIndex, setHoveredVideoIndex] = useState(-1)
 
 	// Play all videos from the start
 	const playAllVideosFromStart = () => {
 		videosRefs.current.forEach((video, index) => {
 			if (video) {
 				video.currentTime = 0 // Reset the time
+				video.play()
 			}
 		})
 	}
@@ -44,30 +46,34 @@ const MultiVideo: FunctionComponent<VideoProps> = ({ urls, styling, children }) 
 
 	return (
 		<div
-			className="relative w-full h-full grid"
+			className={
+				"relative grid w-full text-xs sm:text-base  md:text-base lg:text-base xl:text-base 2xl:text-base gap-2"
+			}
 			style={{
 				gridTemplateColumns: `repeat(${urls.length}, minmax(0, 1fr))`,
-				gap: "10px", // adjust the gap size as needed
 			}}
 		>
 			{urls.map((url, index) => (
-				<div key={index} className="w-full h-full">
-					<video
-						ref={(el) => (el ? (videosRefs.current[index] = el) : null)}
-						autoPlay
-						loop
-						playsInline
-						muted
-						className="w-full h-full"
-						style={{
-							objectFit: objectFit,
-							borderRadius: roundedCorners ? "0.5rem" : "0",
-						}}
-					>
-						<source src={url} type="video/mp4" />
-					</video>
-				</div>
+				<Video
+					key={index}
+					url={url}
+					styling={styling}
+					ref={(el) => {
+						if (el) videosRefs.current[index] = el
+					}}
+					onHover={(hover) => {
+						setHoveredVideoIndex(hover ? index : -1)
+					}}
+				/>
 			))}
+			{urls.map(
+				(url, index) =>
+					captions &&
+					captions[index] && (
+						<Content key={"caption_" + index} name={"Caption_" + index} contents={captions[index]} />
+					),
+			)}
+
 			{children}
 		</div>
 	)

@@ -1,5 +1,7 @@
+import Icon from "@/icons/icon"
 import { CitationNode } from "@/types/node"
 import { type FunctionComponent, useRef, useState } from "react"
+import * as gtag from "@/utils/gtags.client"
 
 interface CitationProps extends CitationNode {
 	children?: React.ReactNode
@@ -26,19 +28,25 @@ const Citation: FunctionComponent<CitationProps> = ({ type, name, authors, title
 		<div className="space-y-3 pt-16" id="Citation">
 			<h1 className="text-primary font-sans text-xl font-bold dark:text-white">Citation</h1>
 
-			<div className="group relative rounded-lg bg-black bg-opacity-5 hover:bg-opacity-10 transition duration-200 ease-in-out p-2 dark:bg-white dark:bg-opacity-5 dark:hover:bg-opacity-10">
+			<div className="group relative rounded-lg bg-black bg-opacity-5 hover:bg-opacity-10 p-2 dark:bg-white dark:bg-opacity-5 dark:hover:bg-opacity-10 transition duration-200 ease-in-out">
 				<button
 					onClick={() => {
 						copyToClipboard()
 						setTimeout(() => setIsCopied(false), 2000)
+
+						const rest = gtag.event({
+							category: "Button",
+							action: "custom_click",
+							label: "Citation",
+						})
 					}}
 					onMouseLeave={() => setIsCopied(false)}
-					className="opacity-0 group-hover:opacity-100 absolute top-2 right-2 p-2 rounded-lg bg-black text-white transition duration-200 ease-in-out cursor-pointer z-10 hover:bg-opacity-80 dark:bg-white dark:bg-opacity-5 dark:hover:bg-opacity-80 dark:text-black"
+					className="opacity-0 group-hover:opacity-100 absolute top-2 right-2 p-2 rounded-lg bg-black text-white cursor-pointer z-10 bg-opacity-50 hover:bg-opacity-70 dark:bg-white dark:bg-opacity-10 dark:hover:bg-opacity-20 dark:text-black transition duration-200 ease-in-out"
 				>
 					{isCopied ? (
-						<img src="/icons/success.svg" className="w-4 h-4" alt="Copy to Clipboard" />
+						<Icon name="success" className="w-4 h-4" constant="white" />
 					) : (
-						<img src="/icons/copy.svg" className="w-4 h-4" alt="Copy to Clipboard" />
+						<Icon name="copy" className="w-4 h-4" constant="white" />
 					)}
 				</button>
 				<div ref={citationRef} className="text-justify grid grid-cols-[auto_1fr] text-primary dark:text-white">

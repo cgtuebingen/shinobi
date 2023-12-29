@@ -2,26 +2,46 @@
     {
         "icon": "arxiv",
         "name": "Paper",
-        "link": "https://arxiv.org"
+        "link": "https://arxiv.org",
+        "styling": {
+            "includeInHeader": true,
+            "includeInStickyHeader": true
+        }
     },
     {
         "icon": "github",
         "name": "Code (coming soon)",
-        "link": ""
+        "link": "",
+        "styling": {
+            "includeInHeader": true,
+            "includeInStickyHeader": false
+        }
     },
     {
         "icon": "youtube",
         "name": "Video",
-        "link": "https://youtu.be/bn7L-va0Y78"
+        "link": "https://youtu.be/bn7L-va0Y78",
+        "styling": {
+            "includeInHeader": true,
+            "includeInStickyHeader": false
+        }
     },
     {
         "icon": "results",
         "name": "Results",
-        "link": "#Results"
+        "link": "#Results",
+        "styling": {
+            "includeInHeader": true,
+            "includeInStickyHeader": true
+        }
     },
     {
         "icon": "bibtex",
         "name": "Cite",
-        "link": "#Citation"
+        "link": "#Citation",
+        "styling": {
+            "includeInHeader": true,
+            "includeInStickyHeader": true
+        }
     }
 ]

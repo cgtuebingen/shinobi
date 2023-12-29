@@ -33,6 +33,34 @@ export default function App() {
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+				{/* HTML Meta Tags */}
+				<meta
+					name="description"
+					content="Shape and Illumination using Neural Object Decomposition via BRDF Optimization In-the-wild"
+				/>
+
+				{/* <!-- Facebook Meta Tags --> */}
+				<meta property="og:url" content="https://shinobi.aengelhardt.com" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content="SHINOBI" />
+				<meta
+					property="og:description"
+					content="Shape and Illumination using Neural Object Decomposition via BRDF Optimization In-the-wild"
+				/>
+				<meta property="og:image" content="" />
+
+				{/* <!-- Twitter Meta Tags --> */}
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta property="twitter:domain" content="shinobi.aengelhardt.com" />
+				<meta property="twitter:url" content="https://shinobi.aengelhardt.com" />
+				<meta name="twitter:title" content="SHINOBI" />
+				<meta
+					name="twitter:description"
+					content="Shape and Illumination using Neural Object Decomposition via BRDF Optimization In-the-wild"
+				/>
+				<meta name="twitter:image" content="" />
+
 				<link rel="icon" href="favicon.ico" />
 				<Meta />
 				<Links />
@@ -43,7 +71,7 @@ export default function App() {
 				<script src="babylon/babylon.gui.min.js"></script>
 				<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 			</head>
-			<body style={{ overscrollBehavior: "none" }}>
+			<body className="bg-white dark:bg-black" style={{ overscrollBehavior: "none" }}>
 				<script async src={`https://www.googletagmanager.com/gtag/js?id=G-H3WNEKDGDG`} />
 				<script
 					async

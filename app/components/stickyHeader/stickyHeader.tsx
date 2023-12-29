@@ -1,6 +1,7 @@
 // components/StickyHeader.tsx
 import { LinkNode } from "@/types/node"
 import React from "react"
+import * as gtag from "@/utils/gtags.client"
 
 interface StickyHeaderProps {
 	title: string
@@ -18,18 +19,29 @@ const StickyHeader: React.FC<StickyHeaderProps> = ({ title, links }) => {
 					<p className="text-secondary text-justify block  font-bold  text-lg dark:text-white">{title}</p>
 					<div className="flex flex-row space-x-4 justify-center items-center">
 						{links &&
-							links.map(
-								(link, index) =>
-									(link.icon == "arxiv" || link.icon == "bibtex" || link.icon == "youtube") && (
+							links.map((link, index) => {
+								const includeInStickyHeader = link.styling ? link.styling.includeInStickyHeader : false
+								if (includeInStickyHeader) {
+									return (
 										<a
 											key={link.name}
 											href={link.link}
 											className="text-secondary font-normal  cursor-pointer text-inherit  text-center hover:underline dark:text-white"
+											onClick={() => {
+												gtag.event({
+													category: "Link",
+													action: "custom_click",
+													label: link.name,
+												})
+											}}
 										>
 											{link.name}
 										</a>
-									),
-							)}
+									)
+								} else {
+									return null
+								}
+							})}
 					</div>
 				</div>
 			</div>

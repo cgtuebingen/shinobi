@@ -2,11 +2,11 @@
     {
         "name": "University of Tübingen",
         "link": "https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/computergrafik/lehrstuhl/",
-        "image": "images/uni_logo.png"
+        "image": "images/uni_logo_alpha.png"
     },
     {
         "name": "Google Research",
         "link": "https://research.google/research-areas/machine-perception/",
-        "image": "images/google_logo.png"
+        "image": "images/google_logo_alpha.png"
     }
 ]

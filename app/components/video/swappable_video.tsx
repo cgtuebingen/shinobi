@@ -116,7 +116,8 @@ const SwappableVideo: FunctionComponent<SwappableVideoProps> = ({
 
 		// Set time of previous main video to the time of the new main video
 		if (previousMainVideo) {
-			previousMainVideo.currentTime = newMainVideo.currentTime
+			const clickTimeOffset = 0.05
+			previousMainVideo.currentTime = newMainVideo.currentTime + clickTimeOffset
 		}
 		setSelectedVideoIndex(index)
 
@@ -180,7 +181,7 @@ const SwappableVideo: FunctionComponent<SwappableVideoProps> = ({
 						loop
 						playsInline
 						muted
-						className="w-16 h-16 cursor-pointer shadow-lg border-2"
+						className="cursor-pointer shadow-lg border-2   md:w-16 md:h-16  w-12 h-12"
 						style={{
 							objectFit: objectFit,
 							filter: index === selectedVideoIndex ? "grayscale(100%)" : "none",

@@ -112,7 +112,6 @@ const ComparableSwappableVideo: React.FC<ComparableSwappableVideoProps> = ({
 
 	// Play all videos from the start
 	const playAllVideosFromStart = () => {
-		console.log("playAllVideosFromStart")
 		videosRefs.current.forEach((video, index) => {
 			if (video) {
 				video.currentTime = 0 // Reset the time
