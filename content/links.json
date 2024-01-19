@@ -2,7 +2,7 @@
     {
         "icon": "arxiv",
         "name": "Paper",
-        "link": "https://arxiv.org",
+        "link": "hhttps://arxiv.org/abs/2401.10171",
         "styling": {
             "includeInHeader": true,
             "includeInStickyHeader": true
