@@ -1,5 +1,5 @@
 {
-    "type": "misc",
+    "type": "inproceedings",
     "name": "engelhardt2023-shinobi",
     "authors": [
         ["Andreas", "Engelhardt"],
@@ -14,9 +14,9 @@
         ["Varun", "Jampani"]
     ],
     "title": "{SHINOBI}: {Sh}ape and {I}llumination using {N}eural {O}bject Decomposition via {B}RDF Optimization {I}n-the-wild",
-    "booktitle": "preprint",
-    "year": 2023,
+    "booktitle": "CVPR",
+    "year": 2024,
     "eprint": "{}",
-    "archivePrefix": "arXiv",
-    "primaryClass": "cs.CV"
+    "archivePrefix": "{}",
+    "primaryClass": "{}"
 }
